@@ -14,8 +14,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative z-[9999]">
+      <div className="relative">
         <video
+          className="border"
           ref={videoRef}
           src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           controls

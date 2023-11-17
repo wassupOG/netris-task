@@ -8,18 +8,21 @@ type ReactangleProps = {
 }
 
 export function Rectangle({ events, videoRef }: ReactangleProps) {
-  return events.map((event) => (
-    <div
-      key={event.timestamp}
-      style={{
-        position: 'absolute',
-        left: adjuster(event.zone.left, videoRef!.current!.clientWidth, 'w'),
-        top: adjuster(event.zone.top, videoRef!.current!.clientHeight, 'h'),
-        width: adjuster(event.zone.width, videoRef!.current!.clientWidth, 'w'),
-        height: adjuster(event.zone.height, videoRef!.current!.clientHeight, 'h'),
-        background: 'rgba(0, 255, 0, 0.4)',
-        border: '1px solid green',
-      }}
-    />
-  ))
+  const video = videoRef.current
+  if (video) {
+    return events.map((event) => (
+      <div
+        key={event.timestamp}
+        style={{
+          position: 'absolute',
+          left: adjuster(event.zone.left, video.clientWidth, 'w'),
+          top: adjuster(event.zone.top, video.clientHeight, 'h'),
+          width: adjuster(event.zone.width, video.clientWidth, 'w'),
+          height: adjuster(event.zone.height, video.clientHeight, 'h'),
+          background: 'rgba(0, 255, 0, 0.4)',
+          border: '1px solid green',
+        }}
+      />
+    ))
+  }
 }
