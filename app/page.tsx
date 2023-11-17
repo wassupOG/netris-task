@@ -3,14 +3,14 @@
 import { Coordinate } from './utils/coordinates'
 import { useRef, useState } from 'react'
 import { Rectangle } from '@/components/custom/rectangle'
-import { coordinateSetter } from './utils/coordinate-setter'
+import { useCoordinateSetter } from './utils/coordinate-setter'
 import { TimeScroll } from '@/components/custom/time-scroll'
 
 export default function Home() {
   const videoRef = useRef(null)
   const [events, setEvents] = useState<Coordinate>([])
 
-  coordinateSetter(videoRef, setEvents)
+  useCoordinateSetter(videoRef, setEvents)
 
   return (
     <>

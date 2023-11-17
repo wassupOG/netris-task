@@ -1,7 +1,7 @@
 import { Dispatch, MutableRefObject, SetStateAction, useEffect } from 'react'
 import { Coordinate, coordinates } from './coordinates'
 
-export function coordinateSetter(
+export function useCoordinateSetter(
   videoRef: MutableRefObject<HTMLVideoElement | null>,
   setEvents: Dispatch<SetStateAction<Coordinate>>,
 ) {
