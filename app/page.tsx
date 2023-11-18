@@ -7,7 +7,7 @@ import { useCoordinateSetter } from './utils/coordinate-setter'
 import { TimeScroll } from '@/components/custom/time-scroll'
 
 export default function Home() {
-  const videoRef = useRef(null)
+  const videoRef = useRef<null | HTMLVideoElement>(null)
   const [events, setEvents] = useState<Coordinate>([])
 
   useCoordinateSetter(videoRef, setEvents)
@@ -20,7 +20,7 @@ export default function Home() {
           ref={videoRef}
           src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           controls
-        ></video>
+        />
         <Rectangle events={events} videoRef={videoRef} />
       </div>
 
