@@ -16,6 +16,8 @@ export default function Home() {
     <>
       <div className="relative">
         <video
+          height={'100%'}
+          width={'100%'}
           className="border"
           ref={videoRef}
           src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
